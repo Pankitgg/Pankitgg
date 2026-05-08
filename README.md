@@ -18,7 +18,7 @@
 ```
 
 ## 🐍 Snake Contribution Graph
-![snake animation](https://github.com/Pankitgg/Pankitgg/blob/output/github-contribution-grid-snake.svg)
+![snake animation](https://github.com/Pankitgg/Pankitgg/blob/main/github-contribution-grid-snake.svg)
 
 ## 🛠️ Skills
 
