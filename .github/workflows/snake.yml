@@ -26,7 +26,11 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           github_user_name: Pankitgg
           output_file: github-contribution-grid-snake.svg
-          commits_snake: true
+          commits_snake: false
+          palette: github
+          snake_color_mode: "fixed"
+          snake_color: "#f0883e"
+          bg_color: "#0d1117"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
