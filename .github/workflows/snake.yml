@@ -20,16 +20,13 @@ jobs:
           persist-credentials: false
           ref: output
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Generate Snake
+        uses: Platane/snk@v3
         with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        run: pip install requests
-
-      - name: Generate Snake SVG
-        run: python scripts/generate_snake.py
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_user_name: Pankitgg
+          output_file: github-contribution-grid-snake.svg
+          commits_snake: true
 
       - name: Push changes
         uses: ad-m/github-push-action@master
