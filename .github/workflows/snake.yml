@@ -7,12 +7,17 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -25,17 +30,9 @@ jobs:
       - name: Generate Snake SVG
         run: python scripts/generate_snake.py
 
-      - name: List files
-        run: ls -la
-
       - name: Push changes
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          if [ -f github-contribution-grid-snake.svg ]; then
-            git add github-contribution-grid-snake.svg
-            git diff --cached --quiet || git commit -m "Update snake animation"
-            git push
-          else
-            echo "Snake SVG file not generated, skipping commit"
-          fi
+        uses: ad-m/github-push-action@master
+        with:
+          branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: "Update snake animation"
