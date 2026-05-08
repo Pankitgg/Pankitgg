@@ -12,14 +12,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Generate Snake
-        uses: Platane/snk@v3
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          github_user_name: Pankitgg
-          output_file: github-contribution-grid-snake.svg
-          commits_snake: true
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Generate Snake SVG
+        run: python scripts/generate_snake.py
+
+      - name: List files
+        run: ls -la
 
       - name: Push changes
         run: |
@@ -27,7 +34,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           if [ -f github-contribution-grid-snake.svg ]; then
             git add github-contribution-grid-snake.svg
-            git diff --quiet || git commit -m "Update snake animation"
+            git diff --cached --quiet || git commit -m "Update snake animation"
             git push
           else
             echo "Snake SVG file not generated, skipping commit"
