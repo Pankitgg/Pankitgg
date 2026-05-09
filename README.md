@@ -1,6 +1,6 @@
-你好，我是ankitgg
+你好，我是pankitgg
 
-博客:[ankitgg-blog](https://blog.ai-nous.com/)
+博客:[pankitgg-blog](https://blog.ai-nous.com/)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Pankitgg/Pankitgg/output/github-snake-dark.svg" />
