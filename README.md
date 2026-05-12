@@ -2,8 +2,6 @@
 
 博客:[pankitgg-blog](https://blog.ai-nous.com/)
 
----
-
 <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 15px; border-radius: 10px; margin: 20px 0;">
   <div style="overflow: hidden; white-space: nowrap;">
     <div style="display: inline-block; padding-left: 100%; animation: marquee 20s linear infinite;">
@@ -19,7 +17,6 @@
 }
 </style>
 
----
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Pankitgg/Pankitgg/output/github-snake-dark.svg" />
